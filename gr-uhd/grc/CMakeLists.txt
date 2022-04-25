@@ -55,6 +55,9 @@ if(ENABLE_UHD_RFNOC)
         uhd_rfnoc_rx_streamer.block.yml
         uhd_rfnoc_tx_radio.block.yml
         uhd_rfnoc_tx_streamer.block.yml
+        uhd_rfnoc_addcomplexmult.block.yml
+        uhd_rfnoc_fir.block.yml
+        uhd_rfnoc_splitstream.block.yml
         DESTINATION ${GRC_BLOCKS_DIR}
     )
 endif(ENABLE_UHD_RFNOC)

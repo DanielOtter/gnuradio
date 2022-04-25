@@ -26,6 +26,9 @@ if(ENABLE_UHD_RFNOC)
         rfnoc_rx_streamer_impl.cc
         rfnoc_tx_radio_impl.cc
         rfnoc_tx_streamer_impl.cc
+        rfnoc_addcomplexmult_impl.cc
+        rfnoc_fir_impl.cc
+        rfnoc_splitstream_impl.cc
     )
 endif(ENABLE_UHD_RFNOC)
 

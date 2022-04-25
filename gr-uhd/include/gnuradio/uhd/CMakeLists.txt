@@ -28,6 +28,9 @@ if (ENABLE_UHD_RFNOC)
         rfnoc_rx_streamer.h
         rfnoc_tx_radio.h
         rfnoc_tx_streamer.h
+        rfnoc_addcomplexmult.h
+        rfnoc_fir.h
+        rfnoc_splitstream.h
         DESTINATION ${GR_INCLUDE_DIR}/gnuradio/uhd
     )
 endif (ENABLE_UHD_RFNOC)

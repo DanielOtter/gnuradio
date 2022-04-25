@@ -24,6 +24,9 @@ if(ENABLE_UHD_RFNOC)
     rfnoc_rx_streamer_python.cc
     rfnoc_tx_radio_python.cc
     rfnoc_tx_streamer_python.cc
+    rfnoc_addcomplexmult_python.cc
+    rfnoc_fir_python.cc
+    rfnoc_splitstream_python.cc
     )
 endif()
 
