@@ -46,6 +46,8 @@ bool rfnoc_rx_radio_impl::start()
     GR_LOG_DEBUG(d_logger, "Committing graph...");
     d_graph->commit();
 
+    // d_radio_ref->enable_rx_timestamps(False, 0);
+
     // Start the streamers
     ::uhd::stream_cmd_t stream_cmd(::uhd::stream_cmd_t::STREAM_MODE_START_CONTINUOUS);
     stream_cmd.stream_now = true;
