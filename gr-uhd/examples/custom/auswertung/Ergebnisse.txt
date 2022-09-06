@@ -1,0 +1,2 @@
+1. Sinus 100000000 Samples: sum(abs(cpu - fpga)) / len -> 9.110174583163771e-05 -> 9.11e-5 Fehler pro Sample
+2. Noise 100000000 Samples: sum(abs(cpu - fpga)) / len -> 0.08259514716399878 -> 8.26e-2 Fehler pro Sample
