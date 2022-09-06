@@ -85,7 +85,7 @@ blocks:
     bus_structure: null
     coordinate: [64, 428.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_copy_0
   id: blocks_copy
   parameters:
@@ -123,7 +123,7 @@ blocks:
     bus_structure: null
     coordinate: [496, 428.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_throttle_0
   id: blocks_throttle
   parameters:
@@ -142,7 +142,7 @@ blocks:
     bus_structure: null
     coordinate: [312, 468.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: qtgui_freq_sink_x_0
   id: qtgui_freq_sink_x
   parameters:
@@ -417,7 +417,7 @@ blocks:
     bus_structure: null
     coordinate: [944, 396.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: uhd_rfnoc_ddc_0
   id: uhd_rfnoc_ddc
   parameters:
@@ -437,6 +437,28 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [360, 180.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_duc_0
+  id: uhd_rfnoc_duc
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    comment: ''
+    device_select: '-1'
+    freq: '0'
+    input_rate: 400e3
+    instance_index: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+    propagation: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1048, 516.0]
     rotation: 0
     state: true
 - name: uhd_rfnoc_rx_radio_0
@@ -488,25 +510,25 @@ blocks:
   id: uhd_rfnoc_tx_radio
   parameters:
     affinity: ''
-    agc: Default
+    agc: Enabled
     alias: ''
     antenna: TX/RX
     bandwidth: '0'
     block_args: ''
     comment: ''
     device_select: '-1'
-    frequency: ''
-    gain: ''
-    instance_index: '-1'
+    frequency: 1e9
+    gain: '20'
+    instance_index: '0'
     num_chans: '1'
-    rate: ''
+    rate: 200e6
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1072, 492.0]
+    coordinate: [1368, 484.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: uhd_rfnoc_tx_streamer_0
   id: uhd_rfnoc_tx_streamer
   parameters:
@@ -517,14 +539,14 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     num_chans: '1'
-    otw: ''
+    otw: sc16
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
     coordinate: [824, 568.0]
     rotation: 0
-    state: disabled
+    state: enabled
 
 connections:
 - [analog_sig_source_x_0, '0', blocks_throttle_0, '0']
@@ -534,10 +556,11 @@ connections:
 - [blocks_copy_1, '0', uhd_rfnoc_tx_streamer_0, '0']
 - [blocks_throttle_0, '0', blocks_copy_1, '0']
 - [uhd_rfnoc_ddc_0, '0', uhd_rfnoc_rx_streamer_0, '0']
+- [uhd_rfnoc_duc_0, '0', uhd_rfnoc_tx_radio_0, '0']
 - [uhd_rfnoc_rx_radio_0, '0', uhd_rfnoc_ddc_0, '0']
 - [uhd_rfnoc_rx_streamer_0, '0', blocks_copy_0, '0']
-- [uhd_rfnoc_tx_streamer_0, '0', uhd_rfnoc_tx_radio_0, '0']
+- [uhd_rfnoc_tx_streamer_0, '0', uhd_rfnoc_duc_0, '0']
 
 metadata:
   file_format: 1
-  grc_version: v3.9.6.0-2-gbf9b25e7
+  grc_version: v3.9.5.0-62-gb64a46bf

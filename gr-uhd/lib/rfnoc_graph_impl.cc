@@ -60,7 +60,8 @@ public:
         _graph->connect(block_id_t(src_block_id),
                         src_block_port,
                         block_id_t(dst_block_id),
-                        dst_block_port);
+                        dst_block_port,
+                        skip_property_propagation);
     }
 
     void connect(const std::string& block1,

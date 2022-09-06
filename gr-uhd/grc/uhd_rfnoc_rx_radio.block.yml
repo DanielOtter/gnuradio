@@ -81,6 +81,11 @@ parameters:
   options: ['True', 'False']
   default: 'False'
 
+inputs:
+- domain: message
+  id: cmd
+  optional: true
+
 
 outputs:
 - domain: rfnoc

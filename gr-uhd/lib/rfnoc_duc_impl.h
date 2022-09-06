@@ -25,9 +25,12 @@ public:
     double
     set_freq(const double freq, const size_t chan, const ::uhd::time_spec_t time = 0.0);
     double set_input_rate(const double rate, const size_t chan);
+    bool get_propagation() override;
+    void set_propagation(const bool enable) override;
 
 private:
     ::uhd::rfnoc::duc_block_control::sptr d_duc_ref;
+    bool d_propagation;
 };
 
 } // namespace uhd

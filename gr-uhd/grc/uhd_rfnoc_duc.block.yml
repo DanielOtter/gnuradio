@@ -12,9 +12,11 @@ templates:
         ${instance_index})
     self.${id}.set_freq(${freq}, 0, uhd.time_spec(0.0))
     self.${id}.set_input_rate(${input_rate}, 0)
+    self.${id}.set_propagation(${propagation})
   callbacks:
   - set_freq(${freq}, 0)
   - set_input_rate(${input_rate}, 0)
+  - set_propagation(${propagation})
 
 parameters:
 - id: num_chans
@@ -39,6 +41,11 @@ parameters:
 - id: input_rate
   label: Input Rate (Hz)
   dtype: real
+- id: propagation
+  label: Disable Propagation
+  dtype: bool
+  options: ['True', 'False']
+  default: 'False'
 
 inputs:
 - domain: rfnoc

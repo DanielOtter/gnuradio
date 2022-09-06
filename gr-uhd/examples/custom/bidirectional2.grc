@@ -64,6 +64,62 @@ blocks:
     coordinate: [200, 28.0]
     rotation: 0
     state: true
+- name: start_stream
+  id: variable_qtgui_msg_push_button
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Start Stream
+    msgName: pressed
+    relBackgroundColor: default
+    relFontColor: default
+    type: int
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 324.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_addcomplexmult_0
+  id: uhd_rfnoc_addcomplexmult
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    comment: ''
+    device_select: '-1'
+    instance_index: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1152, 108.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_addcomplexmult_0_0
+  id: uhd_rfnoc_addcomplexmult
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    comment: ''
+    device_select: '-1'
+    instance_index: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1160, 396.0]
+    rotation: 0
+    state: true
 - name: uhd_rfnoc_ddc_0
   id: uhd_rfnoc_ddc
   parameters:
@@ -82,7 +138,28 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [360, 220.0]
+    coordinate: [480, 100.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_ddc_0_0
+  id: uhd_rfnoc_ddc
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    comment: ''
+    device_select: '-1'
+    freq: '0'
+    instance_index: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+    output_rate: 100e3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [488, 380.0]
     rotation: 0
     state: true
 - name: uhd_rfnoc_duc_0
@@ -94,7 +171,93 @@ blocks:
     comment: ''
     device_select: '-1'
     freq: '0'
-    input_rate: 400e3
+    input_rate: 100e3
+    instance_index: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+    propagation: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1152, 220.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_duc_0_0
+  id: uhd_rfnoc_duc
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    comment: ''
+    device_select: '-1'
+    freq: '0'
+    input_rate: 100e3
+    instance_index: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+    propagation: 'True'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1160, 500.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_fir_0
+  id: uhd_rfnoc_fir
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    coeffs: '[32767, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]'
+    comment: ''
+    device_select: '-1'
+    instance_index: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [808, 100.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_fir_0_0
+  id: uhd_rfnoc_fir
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    coeffs: '[32767, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]'
+    comment: ''
+    device_select: '-1'
+    instance_index: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, 388.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_fir_1
+  id: uhd_rfnoc_fir
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    coeffs: '[32767, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]'
+    comment: ''
+    device_select: '-1'
     instance_index: '1'
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -103,10 +266,31 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [688, 228.0]
+    coordinate: [808, 236.0]
     rotation: 0
     state: true
-- name: uhd_rfnoc_rx_radio_0
+- name: uhd_rfnoc_fir_1_0
+  id: uhd_rfnoc_fir
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    coeffs: '[32767, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]'
+    comment: ''
+    device_select: '-1'
+    instance_index: '3'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, 516.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_rx_radio_0_0
   id: uhd_rfnoc_rx_radio
   parameters:
     affinity: ''
@@ -119,9 +303,9 @@ blocks:
     dc_offset: 'True'
     device_select: '-1'
     frequency: 1e9
-    gain: '32'
-    instance_index: '0'
-    iq_balance: 'True'
+    gain: '1'
+    instance_index: '1'
+    iq_balance: 'False'
     maxoutbuf: '0'
     minoutbuf: '0'
     num_chans: '1'
@@ -130,7 +314,72 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [48, 180.0]
+    coordinate: [256, 396.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_rx_radio_0_0_0
+  id: uhd_rfnoc_rx_radio
+  parameters:
+    affinity: ''
+    agc: Default
+    alias: ''
+    antenna: RX2
+    bandwidth: 200e6
+    block_args: spp=128
+    comment: ''
+    dc_offset: 'True'
+    device_select: '-1'
+    frequency: 1e9
+    gain: '1'
+    instance_index: '0'
+    iq_balance: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+    rate: 200e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 124.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_splitstream_0
+  id: uhd_rfnoc_splitstream
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    comment: ''
+    device_select: '-1'
+    instance_index: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [496, 244.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_splitstream_0_0
+  id: uhd_rfnoc_splitstream
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    comment: ''
+    device_select: '-1'
+    instance_index: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [504, 524.0]
     rotation: 0
     state: true
 - name: uhd_rfnoc_tx_radio_0
@@ -145,7 +394,7 @@ blocks:
     comment: ''
     device_select: '-1'
     frequency: 1e9
-    gain: '32'
+    gain: '1'
     instance_index: '1'
     num_chans: '1'
     rate: 200e6
@@ -153,15 +402,53 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1008, 204.0]
+    coordinate: [1432, 124.0]
+    rotation: 0
+    state: true
+- name: uhd_rfnoc_tx_radio_0_0
+  id: uhd_rfnoc_tx_radio
+  parameters:
+    affinity: ''
+    agc: Default
+    alias: ''
+    antenna: TX/RX
+    bandwidth: '0'
+    block_args: spp=128
+    comment: ''
+    device_select: '-1'
+    frequency: 1e9
+    gain: '1'
+    instance_index: '0'
+    num_chans: '1'
+    rate: 200e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1432, 412.0]
     rotation: 0
     state: true
 
 connections:
-- [uhd_rfnoc_ddc_0, '0', uhd_rfnoc_duc_0, '0']
+- [start_stream, pressed, uhd_rfnoc_rx_radio_0_0, cmd]
+- [start_stream, pressed, uhd_rfnoc_rx_radio_0_0_0, cmd]
+- [uhd_rfnoc_addcomplexmult_0, '0', uhd_rfnoc_duc_0, '0']
+- [uhd_rfnoc_addcomplexmult_0_0, '0', uhd_rfnoc_duc_0_0, '0']
+- [uhd_rfnoc_ddc_0, '0', uhd_rfnoc_splitstream_0, '0']
+- [uhd_rfnoc_ddc_0_0, '0', uhd_rfnoc_splitstream_0_0, '0']
 - [uhd_rfnoc_duc_0, '0', uhd_rfnoc_tx_radio_0, '0']
-- [uhd_rfnoc_rx_radio_0, '0', uhd_rfnoc_ddc_0, '0']
+- [uhd_rfnoc_duc_0_0, '0', uhd_rfnoc_tx_radio_0_0, '0']
+- [uhd_rfnoc_fir_0, '0', uhd_rfnoc_addcomplexmult_0, '0']
+- [uhd_rfnoc_fir_0_0, '0', uhd_rfnoc_addcomplexmult_0_0, '0']
+- [uhd_rfnoc_fir_1, '0', uhd_rfnoc_addcomplexmult_0, '1']
+- [uhd_rfnoc_fir_1_0, '0', uhd_rfnoc_addcomplexmult_0_0, '1']
+- [uhd_rfnoc_rx_radio_0_0, '0', uhd_rfnoc_ddc_0_0, '0']
+- [uhd_rfnoc_rx_radio_0_0_0, '0', uhd_rfnoc_ddc_0, '0']
+- [uhd_rfnoc_splitstream_0, '0', uhd_rfnoc_fir_0, '0']
+- [uhd_rfnoc_splitstream_0, '1', uhd_rfnoc_fir_1, '0']
+- [uhd_rfnoc_splitstream_0_0, '0', uhd_rfnoc_fir_0_0, '0']
+- [uhd_rfnoc_splitstream_0_0, '1', uhd_rfnoc_fir_1_0, '0']
 
 metadata:
   file_format: 1
-  grc_version: v3.9.6.0-2-gbf9b25e7
+  grc_version: v3.9.5.0-62-gb64a46bf

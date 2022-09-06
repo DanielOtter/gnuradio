@@ -61,5 +61,16 @@ void bind_rfnoc_duc(py::module& m)
              py::arg("chan"),
              D(rfnoc_duc, set_input_rate))
 
+
+        .def("get_propagation",
+             &rfnoc_duc::get_propagation,
+             D(rfnoc_duc, get_propagation))
+
+
+        .def("set_propagation",
+             &rfnoc_duc::set_propagation,
+             py::arg("enable"),
+             D(rfnoc_duc, set_propagation))
+
         ;
 }

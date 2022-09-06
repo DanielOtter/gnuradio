@@ -12,6 +12,8 @@
 #include <gnuradio/uhd/api.h>
 #include <gnuradio/uhd/rfnoc_block.h>
 #include <gnuradio/uhd/rfnoc_graph.h>
+//#include <gnuradio/sync_block.h>
+#include <uhd/stream.hpp>
 
 namespace gr {
 namespace uhd {

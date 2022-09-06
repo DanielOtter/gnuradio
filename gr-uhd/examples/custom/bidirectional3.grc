@@ -104,7 +104,7 @@ blocks:
     bus_structure: null
     coordinate: [1016, 252.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_copy_1
   id: blocks_copy
   parameters:
@@ -223,7 +223,7 @@ blocks:
     bus_structure: null
     coordinate: [1280, 276.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: qtgui_time_sink_x_0
   id: qtgui_time_sink_x
   parameters:
@@ -320,7 +320,7 @@ blocks:
     bus_structure: null
     coordinate: [1296, 188.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: qtgui_time_sink_x_0_0
   id: qtgui_time_sink_x
   parameters:
@@ -431,14 +431,14 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     num_chans: '1'
-    output_rate: 100e3
+    output_rate: 400e3
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
     coordinate: [360, 180.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: uhd_rfnoc_duc_0
   id: uhd_rfnoc_duc
   parameters:
@@ -453,6 +453,7 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     num_chans: '1'
+    propagation: 'False'
   states:
     bus_sink: false
     bus_source: false
@@ -464,7 +465,7 @@ blocks:
   id: uhd_rfnoc_rx_radio
   parameters:
     affinity: ''
-    agc: Enabled
+    agc: Disabled
     alias: ''
     antenna: RX2
     bandwidth: 200e6
@@ -473,7 +474,7 @@ blocks:
     dc_offset: 'True'
     device_select: '-1'
     frequency: 1e9
-    gain: '32'
+    gain: '20'
     instance_index: '0'
     iq_balance: 'True'
     maxoutbuf: '0'
@@ -486,7 +487,7 @@ blocks:
     bus_structure: null
     coordinate: [64, 132.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: uhd_rfnoc_rx_streamer_0
   id: uhd_rfnoc_rx_streamer
   parameters:
@@ -504,7 +505,7 @@ blocks:
     bus_structure: null
     coordinate: [776, 264.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: uhd_rfnoc_tx_radio_0
   id: uhd_rfnoc_tx_radio
   parameters:
@@ -562,4 +563,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: v3.9.6.0-2-gbf9b25e7
+  grc_version: v3.9.5.0-62-gb64a46bf

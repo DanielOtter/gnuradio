@@ -22,17 +22,20 @@ rfnoc_rx_radio::sptr rfnoc_rx_radio::make(rfnoc_graph::sptr graph,
                                           const ::uhd::device_addr_t& block_args,
                                           const int device_select,
                                           const int instance)
-{   
-    return gnuradio::get_initial_sptr(new rfnoc_rx_radio_impl(rfnoc_block::make_block_ref(
-        graph, block_args, "Radio", device_select, instance, MAX_RADIO_REFS), graph));
+{
+    return gnuradio::make_block_sptr<rfnoc_rx_radio_impl>(rfnoc_block::make_block_ref(
+        graph, block_args, "Radio", device_select, instance, MAX_RADIO_REFS), graph);
 }
 
 
 rfnoc_rx_radio_impl::rfnoc_rx_radio_impl(::uhd::rfnoc::noc_block_base::sptr block_ref, rfnoc_graph::sptr graph)
-    : rfnoc_block(block_ref), 
+    : rfnoc_block(block_ref),
     d_radio_ref(get_block_ref<::uhd::rfnoc::radio_control>()),
     d_graph(graph)
 {
+    message_port_register_in(pmt::intern("cmd"));
+    set_msg_handler(pmt::intern("cmd"), [this](pmt::pmt_t msg) { this->cmd(msg); });
+
 }
 
 rfnoc_rx_radio_impl::~rfnoc_rx_radio_impl() {}
@@ -41,27 +44,24 @@ rfnoc_rx_radio_impl::~rfnoc_rx_radio_impl() {}
  * rfnoc_rx_radio API
  *****************************************************************************/
 
-bool rfnoc_rx_radio_impl::start()
+void rfnoc_rx_radio_impl::cmd(pmt::pmt_t msg)
 {
-    GR_LOG_DEBUG(d_logger, "Committing graph...");
-    d_graph->commit();
-
-    // d_radio_ref->enable_rx_timestamps(False, 0);
-
     // Start the streamers
     ::uhd::stream_cmd_t stream_cmd(::uhd::stream_cmd_t::STREAM_MODE_START_CONTINUOUS);
     stream_cmd.stream_now = true;
 
-    GR_LOG_DEBUG(d_logger, "Sending start stream command...");
+    GR_LOG_DEBUG(d_logger, "RX_Radio: Sending start stream command...");
+    d_radio_ref->enable_rx_timestamps(false, 0);
+    d_graph->commit();
     d_radio_ref->issue_stream_cmd(stream_cmd, 0);
-    return true;
 }
 
 bool rfnoc_rx_radio_impl::stop()
 {
-    // If we issue a stream command on start, we also issue it on stop
     ::uhd::stream_cmd_t stream_cmd(::uhd::stream_cmd_t::STREAM_MODE_STOP_CONTINUOUS);
     d_radio_ref->issue_stream_cmd(stream_cmd, 0);
+    GR_LOG_DEBUG(d_logger, "RX_Radio: Sending stop stream command...");
+    //flush();
     return true;
 }
 
