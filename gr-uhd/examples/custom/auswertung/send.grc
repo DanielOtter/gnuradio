@@ -46,7 +46,7 @@ blocks:
     clock_source_6: ''
     clock_source_7: ''
     comment: ''
-    dev_addr: addr=10.10.23.1
+    dev_addr: addr=10.10.23.2
     dev_args: ''
     num_mboards: '1'
     time_source_0: ''
@@ -115,7 +115,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [464, 108.0]
+    coordinate: [648, 108.0]
     rotation: 0
     state: true
 - name: uhd_rfnoc_tx_radio_0
@@ -125,12 +125,12 @@ blocks:
     agc: Default
     alias: ''
     antenna: TX/RX
-    bandwidth: 5e6
+    bandwidth: 200e6
     block_args: '"spp:0=128"'
     comment: ''
     device_select: '-1'
     frequency: variable_qtgui_entry_0
-    gain: '1'
+    gain: '30'
     instance_index: '0'
     num_chans: '1'
     rate: 200e6
@@ -138,7 +138,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [768, 84.0]
+    coordinate: [992, 84.0]
     rotation: 0
     state: true
 - name: uhd_rfnoc_tx_streamer_0
@@ -156,7 +156,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 160.0]
+    coordinate: [440, 160.0]
     rotation: 0
     state: true
 

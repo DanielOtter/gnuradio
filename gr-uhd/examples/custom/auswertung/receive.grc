@@ -82,7 +82,7 @@ blocks:
     autoscale: 'False'
     average: '1.0'
     axislabels: 'True'
-    bw: 300e6
+    bw: 200e6
     color1: '"blue"'
     color10: '"dark blue"'
     color2: '"red"'
@@ -95,7 +95,7 @@ blocks:
     color9: '"dark green"'
     comment: ''
     ctrlpanel: 'False'
-    fc: 2.45e9
+    fc: '0'
     fftsize: '1024'
     freqhalf: 'True'
     grid: 'False'
@@ -158,7 +158,7 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     num_chans: '1'
-    output_rate: 20e6
+    output_rate: 200e6
   states:
     bus_sink: false
     bus_source: false
@@ -173,13 +173,13 @@ blocks:
     agc: Disabled
     alias: ''
     antenna: RX2
-    bandwidth: 5e6
+    bandwidth: 200e6
     block_args: spp=128
     comment: ''
     dc_offset: 'False'
     device_select: '-1'
     frequency: 2.45e9
-    gain: '1'
+    gain: '30'
     instance_index: '0'
     iq_balance: 'False'
     maxoutbuf: '0'
